@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HEY</h1>
+    <h2>welcome to the site</h2>
+    <h3>the messaging site</h3>
+    <h4>make an account, login, post a message</h4>
+    <hr>
+        <a href="/createUser">Create an account</a> | 
+        <a href="/login">Login</a> | 
+        <a href="/message">post a message</a> | 
+    <hr>
+
+    <h2>Messages</h2>
+
+    <% for (let message of locals.messages) { %> 
+        <div>
+            <%= message.dataValues.content %> 
+        </div>
+    
+<div>
+    <!-- I'm creating a form button for every message as it is being created. 
+    so each message must have a unique messageID, that will be attached to each Like button
+    When the form button is pressed, it will go to the like route, the like route will know which
+    message is pressed by the unique messageID and increment the like counter.
+    Then the page will refresh from like router [..  res.redirect('/') which will res.render('index.ejs', data) ..]
+    Which should paste the "new/incremented" like count next to the like button
+
+    ???? I still haven figured out how to paste the unique messageIDs to each unique Form Like Buttons -->
+
+
+    <form action="/like" method="POST">
+
+        <button>Likes <%=lik.dataValues.L_count %></button>
+    </form>
+</div>
+
+
+    <% } %>
+
+    
+<script>
+</script>
+
+
+</body>
+</html>
